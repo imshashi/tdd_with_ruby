@@ -3,8 +3,8 @@ require 'car'
 describe 'Car' do
 
   describe 'attributes' do
-
-    it "allows reading and writing for :make" do
+    # skipping with xit
+    xit "allows reading and writing for :make" do
       car = Car.new
       car.make = "Test"
       expect(car.make).to eq("Test")
@@ -17,15 +17,22 @@ describe 'Car' do
     end
 
     it "allows reading and writing for :color" do
+      # using 'pending'
+      pending("trying to fix bugs")
       car = Car.new
       car.color = "foo"
-      expect(car.color).to eq("foo")
+      expect(car.color).to eq("fo")
     end
 
     it "allows reading for :wheels" do
+      # using 'skip'
+      skip("skipping this example for now")
       car = Car.new
       expect(car.wheels).to eq(4)
     end
+
+    # pending this following example
+    it "allows writing for :doors"
 
   end
 
