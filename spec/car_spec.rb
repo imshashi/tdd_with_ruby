@@ -3,32 +3,28 @@ require 'car'
 describe 'Car' do
 
   describe 'attributes' do
+
+    before(:example) do
+      @car = Car.new
+    end
     # skipping with xit
-    xit "allows reading and writing for :make" do
-      car = Car.new
-      car.make = "Test"
-      expect(car.make).to eq("Test")
+    it "allows reading and writing for :make" do
+      @car.make = "Test"
+      expect(@car.make).to eq("Test")
     end
 
     it "allows reading and writing for :year" do
-      car = Car.new
-      car.year = 9999
-      expect(car.year).to eq(9999)
+      @car.year = 9999
+      expect(@car.year).to eq(9999)
     end
 
     it "allows reading and writing for :color" do
-      # using 'pending'
-      pending("trying to fix bugs")
-      car = Car.new
-      car.color = "foo"
-      expect(car.color).to eq("fo")
+      @car.color = "foo"
+      expect(@car.color).to eq("foo")
     end
 
     it "allows reading for :wheels" do
-      # using 'skip'
-      skip("skipping this example for now")
-      car = Car.new
-      expect(car.wheels).to eq(4)
+      expect(@car.wheels).to eq(4)
     end
 
     # pending this following example
